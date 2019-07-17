@@ -1,0 +1,24 @@
+<h1>List of items:</h1>
+
+<ul *ngFor="let item of storedItems | async"  >
+  <li>
+     name:{{item.payload.doc.data().name}}
+    <br/>
+    id: {{item.payload.doc.id}}
+    <br/>
+    Last modified: {{item.payload.doc.data().modified | date:'short' }}
+    <button (click)="editItem(item.payload.doc.id,item.payload.doc.data().name)">Edit</button>
+    <button (click)="deleteItem(item.payload.doc.id,item.payload.doc.data().name)">Delete</button>
+  </li>
+</ul>
+
+<h3>Add new item:</h3>
+<form>
+  <input type="text" [(ngModel)]="newItemName" name="newItemName">
+  <br/>
+  <button (click)="addNewItem()">Save</button>
+  <button (click)="clearField()">Clear field</button>
+</form>
+<p>Last saved item:{{lastStoredItem.itemName}}</p>
+
+<router-outlet></router-outlet>
