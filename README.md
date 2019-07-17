@@ -1,6 +1,7 @@
 # AppCrud
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+The project was done for test the implementation angular+firebase
 
 ## Development server
 
